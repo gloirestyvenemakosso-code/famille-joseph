@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Famille Joseph</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+<!-- ─── MICROPHONE PERMISSION MODAL ─────────────────────── -->
+<div class="modal-overlay hidden" id="mic-modal">
+  <div class="modal-box">
+    <div class="modal-icon">🎙️</div>
+    <div class="modal-title">Accès au Microphone</div>
+    <p class="modal-text">Famille Joseph a besoin d'accéder à votre microphone pour que vous puissiez participer à l'appel audio. Veuillez autoriser l'accès dans la fenêtre de votre navigateur.</p>
+    <button class="btn btn-gold btn-lg" onclick="requestMic()">Autoriser le microphone</button>
+  </div>
+</div>
+
+<!-- ─── NAV ──────────────────────────────────────────────── -->
+<nav>
+  <a class="nav-brand" href="#">
+    <div>
+      <div class="nav-logo-text">FAMILLE JOSEPH</div>
+      <div class="nav-logo-sub">La Prosperité nous accompagne</div>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="#features">Fonctionnalités</a>
+    <a href="#app">Appel Audio</a>
+  </div>
+  <button class="btn btn-gold" onclick="scrollToApp()">Rejoindre un appel</button>
+</nav>
+
+<!-- ─── HERO ─────────────────────────────────────────────── -->
+<section id="hero">
+  <p class="hero-eyebrow"> Impact Centre Chrétien — Brazzaville</p>
+
+  <div class="hero-logo-wrap">
+    <!-- Arched grid lines SVG -->
+    <div class="arch-lines">
+      <svg viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 160 Q400 60 800 160" fill="none" stroke="#F5C518" stroke-width="1"/>
+        <path d="M0 180 Q400 80 800 180" fill="none" stroke="#F5C518" stroke-width=".5"/>
+        <line x1="250" y1="0" x2="250" y2="200" stroke="#F5C518" stroke-width=".5"/>
+        <line x1="400" y1="0" x2="400" y2="200" stroke="#F5C518" stroke-width=".5"/>
+        <line x1="550" y1="0" x2="550" y2="200" stroke="#F5C518" stroke-width=".5"/>
+        <circle cx="250" cy="120" r="60" fill="none" stroke="#F5C518" stroke-width=".5"/>
+        <circle cx="250" cy="120" r="90" fill="none" stroke="#F5C518" stroke-width=".3"/>
+      </svg>
+    </div>
+    <div class="joseph-logo"><img class="josephimg" src="Images/file_00000000a4e871f4888734734ed2f542.png" alt="Joseph logo"></div>
+  </div>
+
+  <p class="hero-tagline">
+    Nous sommes des <em>visionnaires</em>, porteurs de provision et de sagesse,
+    appelés à impacter notre génération par la <em>destinée divine</em>.
+  </p>
+  <div class="hero-cta-group">
+    <button class="btn btn-gold btn-lg" onclick="scrollToApp(); showCreate()">🎙️ Créer un appel</button>
+    <button class="btn btn-outline btn-lg" onclick="scrollToApp(); showJoin()">🔗 Rejoindre un appel</button>
+  </div>
+</section>
+
+<!-- ─── FEATURES ──────────────────────────────────────────── -->
+<section id="features">
+  <div class="section-header">
+    <p class="section-eyebrow">Pourquoi Famille Joseph?</p>
+    <h2 class="section-title"> Génèse 39:2 /<span> 3 Jean 1:2</span></h2>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feat-icon">♾️</div>
+      <div class="feat-title">Illimité</div>
+      <p class="feat-desc">Réunissez autant de membres que vous voulez dans un seul appel, sans aucune restriction.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feat-icon">🔒</div>
+      <div class="feat-title">Privé & Sécurisé</div>
+      <p class="feat-desc">Chaque réunion est protégée par un code unique. Seuls les membres invités peuvent rejoindre.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feat-icon">💬</div>
+      <div class="feat-title">Chat en Direct</div>
+      <p class="feat-desc">Envoyez des messages texte pendant l'appel sans interrompre la parole des autres.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feat-icon">🎙️</div>
+      <div class="feat-title">Micro Intelligent</div>
+      <p class="feat-desc">Coupez et réactivez votre micro en un clic. Le cercle s'allume quand vous parlez.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feat-icon">📱</div>
+      <div class="feat-title">Tout Appareil</div>
+      <p class="feat-desc">Fonctionne sur téléphone, tablette et ordinateur — aucune installation requise.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feat-icon">✝️</div>
+      <div class="feat-title">Notre Identité</div>
+      <p class="feat-desc">Un espace conçu pour la Famille Joseph — nos couleurs, notre vision, notre communauté.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── APP SECTION ───────────────────────────────────────── -->
+<section id="app">
+  <div class="section-header">
+    <p class="section-eyebrow">Application</p>
+    <h2 class="section-title">Salle d'Appel <span>Audio</span></h2>
+  </div>
+
+  <div class="app-wrapper">
+    <!-- App Header -->
+    <div class="app-header">
+      <div class="app-header-logo">⚡ FAMILLE JOSEPH</div>
+      <div class="live-badge" id="live-badge" style="display:none">
+        <span class="live-dot"></span> EN DIRECT
+      </div>
+      <div class="participant-count" id="pcount" style="display:none">
+        <span id="pcount-num">0</span> participant(s)
+      </div>
+    </div>
+
+    <!-- IDENTITY FORM -->
+    <div class="identity-panel active" id="identity-panel">
+      <h2>✝ Bienvenue</h2>
+      <p>Entrez vos informations pour participer à une réunion Famille Joseph</p>
+      <div class="form-group">
+        <label>Votre Prénom & Nom</label>
+        <input type="text" id="user-name" placeholder="Ex: Leroy Moussama" maxlength="30"/>
+      </div>
+      <div class="form-actions">
+        <button class="btn btn-gold btn-lg" onclick="proceedToLobby()">Continuer →</button>
+      </div>
+    </div>
+
+    <!-- LOBBY: Create or Join -->
+    <div id="lobby-panel" style="display:none; padding:2.5rem; text-align:center;">
+      <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:1.8rem;font-weight:900;color:var(--gold);margin-bottom:.5rem;">Bonjour, <span id="greeting-name"></span> 👋</h2>
+      <p style="color:var(--muted);margin-bottom:2rem;font-size:.9rem;">Que voulez-vous faire ?</p>
+      <div style="display:flex;gap:1.25rem;justify-content:center;flex-wrap:wrap;">
+        <button class="btn btn-gold btn-lg" onclick="createRoom()">🎙️ Créer un nouvel appel</button>
+        <button class="btn btn-outline btn-lg" onclick="showJoinForm()">🔗 Rejoindre avec un code</button>
+      </div>
+
+      <!-- Join form (hidden by default) -->
+      <div id="join-form" style="display:none;margin-top:2rem;">
+        <p style="color:var(--muted);margin-bottom:1rem;font-size:.88rem;">Entrez le code de la réunion :</p>
+        <div class="join-code-input">
+          <input type="text" id="join-code-input" placeholder="EX: ABC123" maxlength="6"/>
+          <button class="btn btn-gold" onclick="joinRoom()">Rejoindre</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ROOM -->
+    <div class="room-panel" id="room-panel">
+      <div class="room-body">
+        <!-- Left: Participants -->
+        <div class="participants-area">
+          <h3>Participants (<span id="part-count">0</span>)</h3>
+          <div id="participants-grid"></div>
+        </div>
+
+        <!-- Right: Sidebar -->
+        <div class="room-sidebar">
+          <!-- Room code -->
+          <div class="sidebar-section">
+            <h4>Code de réunion</h4>
+            <div class="room-code-display">
+              <div class="code" id="room-code-display">------</div>
+              <div class="code-label">Partagez ce code pour inviter</div>
+              <button class="copy-btn" onclick="copyCode()">📋 Copier le code</button>
+            </div>
+          </div>
+
+          <!-- Info -->
+          <div class="sidebar-section">
+            <h4>Infos</h4>
+            <div class="room-info-card">
+              <div class="info-row">
+                <span class="label">Durée</span>
+                <span class="value gold" id="call-duration">00:00</span>
+              </div>
+              <div class="info-row">
+                <span class="label">Participants</span>
+                <span class="value" id="info-pcount">1</span>
+              </div>
+              <div class="info-row">
+                <span class="label">Statut</span>
+                <span class="value" style="color:var(--success)">🟢 En direct</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chat -->
+          <div class="sidebar-section">
+            <h4>Messages</h4>
+            <div class="chat-box">
+              <div id="chat-messages"></div>
+              <div class="chat-input-row">
+                <input type="text" id="chat-input" placeholder="Votre message..." maxlength="200"
+                  onkeydown="if(event.key==='Enter') sendChat()"/>
+                <button class="chat-send" onclick="sendChat()">➤</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <div class="controls-bar">
+        <div class="ctrl-btn" id="mute-btn" onclick="toggleMute()">
+          <span class="icon" id="mute-icon">🎙️</span>
+          <span class="label" id="mute-label">Couper</span>
+        </div>
+        <div class="ctrl-btn" id="speaker-btn" onclick="toggleSpeaker()">
+          <span class="icon" id="speaker-icon">🔊</span>
+          <span class="label">Haut-parleur</span>
+        </div>
+        <div class="ctrl-btn" onclick="raiseHand()">
+          <span class="icon">✋</span>
+          <span class="label">Lever la main</span>
+        </div>
+        <div class="ctrl-btn" onclick="showInvite()">
+          <span class="icon">📤</span>
+          <span class="label">Inviter</span>
+        </div>
+        <div class="ctrl-btn end" onclick="leaveRoom()">
+          <span class="icon">📵</span>
+          <span class="label">Quitter</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ────────────────────────────────────────────── -->
+<footer>
+  <p><span class="gold">FAMILLE JOSEPH</span> · JOSEPH'S SPACE</p>
+  <p style="margin-top:.5rem;">KABWOD_MB@2026 | <span class="gold">✝</span> Impact Centre Chrétien — Brazzaville</p>
+</footer>
+
+<!-- ─── TOAST ─────────────────────────────────────────────── -->
+<div class="toast" id="toast"></div>
+
+<!-- ─── SCRIPTS ───────────────────────────────────────────── -->
+<script src="Script.js"></script>
+</bdy>
+</html>
